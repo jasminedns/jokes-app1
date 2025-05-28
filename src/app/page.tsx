@@ -22,7 +22,7 @@ export default function Home() {
     }
   }, []);
 
-  const getJoke = async ():Promise<void> => {
+  const fetchJoke = async ():Promise<void> => {
     try {
       const response = await fetch('https://official-joke-api.appspot.com/random_joke');
       const data = await response.json();
@@ -68,7 +68,7 @@ export default function Home() {
           </CardContent>
         </Card>
         <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', m: 4 }}>
-          <Button size="md" onClick={getJoke} sx={{ backgroundColor: '#EDC9AF', color: 'black', minWidth: '108px' }}>
+          <Button size="md" onClick={fetchJoke} sx={{ backgroundColor: '#EDC9AF', color: 'black', minWidth: '108px' }}>
             Get joke
           </Button>
           {joke && !isShowingSavedJoke &&
