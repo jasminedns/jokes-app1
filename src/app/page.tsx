@@ -16,7 +16,7 @@ export default function Home() {
   const [isShowingSavedJoke, setIsShowingSavedJoke] = useState<boolean>(false);
     
   useEffect(() => {
-    const savedJoke = localStorage.getItem('joke');
+    const savedJoke = localStorage.getItem('savedJoke');
     if (savedJoke) {
       setHasSavedJoke(true);
     }
